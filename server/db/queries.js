@@ -14,12 +14,7 @@ const db = pgp(connectionString);
 function getChestExercises(req, res, next) {
   db.any('select * from chest')
     .then(function resolve(data) {
-      res.status(200)
-        .json({
-          status: 'success',
-          data: data,
-          message: 'Retrieved ALL chest exercises'
-        });
+      res.status(200).send(data);
     })
     .catch(function error(err) {
       return next(err);
