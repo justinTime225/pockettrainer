@@ -1,14 +1,14 @@
-import React from 'react';
-import styles from './App.css';
+import React, { Component } from 'react';
+import styles from '../style.css';
 import axios from 'axios';
 
-export default class App extends React.Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {test: 'foo'};
   }
   componentWillMount() {
-    axios.get('/test')
+    axios.get('/chest')
     .then(function(res) {
       console.log(res);
     });
