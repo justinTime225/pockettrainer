@@ -19,9 +19,74 @@ function getChestExercises(req, res, next) {
     .catch(function error(err) {
       return next(err);
     });
-}
+};
 
+function getBicepExercises(req, res, next) {
+  db.any('select * from bicep')
+    .then(function resolve(data) {
+      res.status(200).send(data);
+    })
+    .catch(function error(err) {
+      return next(err);
+    });
+};
+
+function getBackExercises(req, res, next) {
+  db.any('select * from back')
+    .then(function resolve(data) {
+      res.status(200).send(data);
+    })
+    .catch(function error(err) {
+      return next(err);
+    });
+};
+
+function getTricepExercises(req, res, next) {
+  db.any('select * from tricep')
+    .then(function resolve(data) {
+      res.status(200).send(data);
+    })
+    .catch(function error(err) {
+      return next(err);
+    });
+};
+
+function getLegsExercises(req, res, next) {
+  db.any('select * from legs')
+    .then(function resolve(data) {
+      res.status(200).send(data);
+    })
+    .catch(function error(err) {
+      return next(err);
+    });
+};
+
+function getShouldersExercises(req, res, next) {
+  db.any('select * from shoulders')
+    .then(function resolve(data) {
+      res.status(200).send(data);
+    })
+    .catch(function error(err) {
+      return next(err);
+    });
+};
+
+function getCoreExercises(req, res, next) {
+  db.any('select * from core')
+    .then(function resolve(data) {
+      res.status(200).send(data);
+    })
+    .catch(function error(err) {
+      return next(err);
+    });
+};
 
 module.exports = {
-  getChestExercises: getChestExercises
+  getChestExercises: getChestExercises,
+  getBicepExercises: getBicepExercises,
+  getBackExercises: getBackExercises,
+  getTricepExercises: getTricepExercises,
+  getLegsExercises: getLegsExercises,
+  getShouldersExercises: getShouldersExercises,
+  getCoreExercises: getCoreExercises
 };
