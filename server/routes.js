@@ -14,6 +14,12 @@ module.exports = (app) => {
     });
   // more API endpoints here
   app.get('/chest', db.getChestExercises);
+  app.get('/bicep', db.getBicepExercises);
+  app.get('/back', db.getBackExercises);
+  app.get('/tricep', db.getTricepExercises);
+  app.get('/legs', db.getLegsExercises);
+  app.get('/shoulders', db.getShouldersExercises);
+  app.get('/core', db.getCoreExercises);
 };
 
 
