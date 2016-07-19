@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styles from '../style.css';
+import Reactable from 'reactable';
 
 /* Action creators */
 import { getChestExercises } from '../actions/basicWorkouts.action.js';
 import { getBicepExercises } from '../actions/basicWorkouts.action.js';
+
+const Table = Reactable.Table;
 
 class App extends Component {
   componentWillMount() {
@@ -14,9 +17,12 @@ class App extends Component {
     }.bind(this));
   }
   render() {
+    if (!this.props.basicWorkout) {
+      return <div>Loading...</div>
+    }
     return (
       <div className={styles.app}>
-        bar
+        <Table className="table" data={this.props.basicWorkout} />
       </div>
     );
   }
