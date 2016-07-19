@@ -25,6 +25,7 @@ class App extends Component {
   render() {
     return (
       <div className={styles.app}>
+
         <div>
           <Button onClick={() => {this.props.getChestExercises()}}>Chest</Button>
           <Button color="primary" onClick={() => {this.props.getBackExercises()}}>Back</Button>
@@ -34,6 +35,8 @@ class App extends Component {
           <Button color="primary" onClick={() => {this.props.getLegsExercises()}}>Legs</Button>
           <Button color="danger" onClick={() => {this.props.getCoreExercises()}}>Core</Button>
         </div>
+
+        {this.props.children}
         <Table className="table" data={this.props.basicWorkout} />
       </div>
     );
