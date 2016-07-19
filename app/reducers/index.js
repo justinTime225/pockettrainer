@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-
+import basicWorkout from './basicWorkouts.reducer.js';
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+  basicWorkout: basicWorkout
 });
 
 export default rootReducer;
