@@ -19,7 +19,7 @@ function getChestExercises(req, res, next) {
     .catch(function error(err) {
       return next(err);
     });
-};
+}
 
 function getBicepExercises(req, res, next) {
   db.any('select * from bicep')
@@ -29,7 +29,7 @@ function getBicepExercises(req, res, next) {
     .catch(function error(err) {
       return next(err);
     });
-};
+}
 
 function getBackExercises(req, res, next) {
   db.any('select * from back')
@@ -39,7 +39,7 @@ function getBackExercises(req, res, next) {
     .catch(function error(err) {
       return next(err);
     });
-};
+}
 
 function getTricepExercises(req, res, next) {
   db.any('select * from tricep')
@@ -49,7 +49,7 @@ function getTricepExercises(req, res, next) {
     .catch(function error(err) {
       return next(err);
     });
-};
+}
 
 function getLegsExercises(req, res, next) {
   db.any('select * from legs')
@@ -59,7 +59,7 @@ function getLegsExercises(req, res, next) {
     .catch(function error(err) {
       return next(err);
     });
-};
+}
 
 function getShouldersExercises(req, res, next) {
   db.any('select * from shoulders')
@@ -69,7 +69,7 @@ function getShouldersExercises(req, res, next) {
     .catch(function error(err) {
       return next(err);
     });
-};
+}
 
 function getCoreExercises(req, res, next) {
   db.any('select * from core')
@@ -79,7 +79,7 @@ function getCoreExercises(req, res, next) {
     .catch(function error(err) {
       return next(err);
     });
-};
+}
 
 module.exports = {
   getChestExercises: getChestExercises,
