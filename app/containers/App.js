@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import styles from '../style.css';
-import axios from 'axios';
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {test: 'foo'};
-  }
+/* Action creators */
+import { getChestExercises } from '../actions/basicWorkouts.action.js';
+import { getBicepExercises } from '../actions/basicWorkouts.action.js';
+
+class App extends Component {
   componentWillMount() {
-    axios.get('/chest')
-    .then(function(res) {
-      console.log(res);
-    });
+    // console.log(this.props.basicWorkout);
+    this.props.getBicepExercises().then(function() {
+      console.log('done', this.props.basicWorkout);
+    }.bind(this));
   }
   render() {
     return (
@@ -21,3 +21,11 @@ export default class App extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    basicWorkout: state.basicWorkout.list
+  };
+}
+
+export default connect(mapStateToProps, {getChestExercises, getBicepExercises})(App);
