@@ -12,7 +12,12 @@ const db = pgp(connectionString);
 
 // add query functions
 function getChestExercises(req, res, next) {
-  db.any('select * from chest')
+  const query = "select name, concat(set_min, '-', set_max) as SetRange, \
+  concat(light_rep_min, '-', light_rep_max) as LightRepRange, \
+  concat(heavy_rep_min, '-', heavy_rep_max) as HeavyRepRange, \
+  break_under_min, superset_type, build_type \
+  from chest";
+  db.any(query)
     .then(function resolve(data) {
       res.status(200).send(data);
     })
@@ -22,7 +27,12 @@ function getChestExercises(req, res, next) {
 }
 
 function getBicepExercises(req, res, next) {
-  db.any('select * from bicep')
+  const query = "select name, concat(set_min, '-', set_max) as SetRange, \
+  concat(light_rep_min, '-', light_rep_max) as LightRepRange, \
+  concat(heavy_rep_min, '-', heavy_rep_max) as HeavyRepRange, \
+  break_under_min, superset_type, build_type \
+  from bicep";
+  db.any(query)
     .then(function resolve(data) {
       res.status(200).send(data);
     })
@@ -32,7 +42,12 @@ function getBicepExercises(req, res, next) {
 }
 
 function getBackExercises(req, res, next) {
-  db.any('select * from back')
+  const query = "select name, concat(set_min, '-', set_max) as SetRange, \
+  concat(light_rep_min, '-', light_rep_max) as LightRepRange, \
+  concat(heavy_rep_min, '-', heavy_rep_max) as HeavyRepRange, \
+  break_under_min, superset_type, build_type \
+  from back";
+  db.any(query)
     .then(function resolve(data) {
       res.status(200).send(data);
     })
@@ -42,7 +57,12 @@ function getBackExercises(req, res, next) {
 }
 
 function getTricepExercises(req, res, next) {
-  db.any('select * from tricep')
+  const query = "select name, concat(set_min, '-', set_max) as SetRange, \
+  concat(light_rep_min, '-', light_rep_max) as LightRepRange, \
+  concat(heavy_rep_min, '-', heavy_rep_max) as HeavyRepRange, \
+  break_under_min, superset_type, build_type \
+  from tricep";
+  db.any(query)
     .then(function resolve(data) {
       res.status(200).send(data);
     })
@@ -52,7 +72,12 @@ function getTricepExercises(req, res, next) {
 }
 
 function getLegsExercises(req, res, next) {
-  db.any('select * from legs')
+  const query = "select name, concat(set_min, '-', set_max) as SetRange, \
+  concat(light_rep_min, '-', light_rep_max) as LightRepRange, \
+  concat(heavy_rep_min, '-', heavy_rep_max) as HeavyRepRange, \
+  break_under_min, superset_type, build_type \
+  from legs";
+  db.any(query)
     .then(function resolve(data) {
       res.status(200).send(data);
     })
@@ -62,7 +87,12 @@ function getLegsExercises(req, res, next) {
 }
 
 function getShouldersExercises(req, res, next) {
-  db.any('select * from shoulders')
+  const query = "select name, concat(set_min, '-', set_max) as SetRange, \
+  concat(light_rep_min, '-', light_rep_max) as LightRepRange, \
+  concat(heavy_rep_min, '-', heavy_rep_max) as HeavyRepRange, \
+  break_under_min, superset_type, build_type \
+  from shoulders";
+  db.any(query)
     .then(function resolve(data) {
       res.status(200).send(data);
     })
@@ -72,7 +102,12 @@ function getShouldersExercises(req, res, next) {
 }
 
 function getCoreExercises(req, res, next) {
-  db.any('select * from core')
+  const query = "select name, concat(set_min, '-', set_max) as SetRange, \
+  concat(light_rep_min, '-', light_rep_max) as LightRepRange, \
+  concat(heavy_rep_min, '-', heavy_rep_max) as HeavyRepRange, \
+  break_under_min, superset_type, build_type \
+  from core";
+  db.any(query)
     .then(function resolve(data) {
       res.status(200).send(data);
     })
